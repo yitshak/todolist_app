@@ -1,0 +1,19 @@
+<%- include("header.ejs") -%>
+  <body>
+    <div class=box id=heading>
+      <h1 ><%=list_title%></h1>
+    </div>
+    <div class="box">
+        <% list_items.forEach(function(item,index){ %>
+          <div class="item">
+            <input type="checkbox" />
+            <p><%=item.name%></p>
+          </div>
+        <% }) %>
+      <!-- <form class="" action="/<%=route_name%>" method="post"> -->
+      <form class="" action="/" method="post">
+        <input type="text" name="newitem" placeholder="New item" autocomplete="off">
+        <button type="submit" name="list" value=<%=route_name%>>+</button>
+      </form>
+    </div>
+<%- include("footer.ejs") -%>
